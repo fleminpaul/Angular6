@@ -1,0 +1,165 @@
+JavaScript:
+	Scripting language
+	OO & Functional programming
+	Interpreted not compiled
+	loosely typed: data type is decided based on runtime literal value.
+	event based, callbacks
+	Single threaded
+    
+
+        $("#btn").on("click,function({
+
+        }))
+
+    Single threaded concept:
+        Stack: all
+        Event loop
+        API register
+        Event Queue(Array Blocking Queue)
+        
+    JavaScript runs on JS enginge:
+        ==>V8 engine developed by google used in chrome and nodejs
+        ==> SpiderMonkey used by Firefox and Adobe products
+        ==> chakara,cotinum used in Microsoft now moving to V8
+        ==> Nashorn : oracle,Java
+
+
+All engine by default support ES5 ==> authority: ECMA script 5 
+
+SCOPe:
+
+var g=100
+function doTask(){
+    var a =10
+    if(g>a)
+    {
+        var b = 20;
+        c=30;
+    }
+    console.log(g,a,b,c);
+}
+console.log(g,a,b,c);
+
+on runtime it will change to 
+
+var g=100
+var c;
+function doTask(){
+    var a =10
+    var b;
+    if(g>a)
+    {
+        b = 20; //hoisted to function level
+        c=30;/hoisted to global scope due to no var keyword
+    }
+    console.log(g,a,b,c);
+}
+console.log(g,a,b,c);
+
+"use strict" in  JavaScript to avoid hoisting
+
+types: undefined,number,null,string,boolean,object,Array
+
+JavaScript engine have semicolon insertion , no need to put ; implicitly
+
+
+CLass  & Objects
+===============
+#1
+var obj= new Object()
+obj.name="Flemin"
+obj.age=31
+obj.getDetails(){
+    return obj.name+","+obj.age;
+}
+
+Recommended way: Object.definePropert(obj,"name",{"value":"Flemin"})
+===================
+#2
+function Person(name,age)
+{
+    this.name=name;
+    this.age=age
+
+    this.getDetails = function(){
+        return this.name+","+this.age;
+    }
+}
+
+var p1 = new Person("Flemin",32);
+var p2 = new Person("Flemin1",32);
+p1.getDetails(); each object will have getDetails method which will make heavy
+p2.getDetails();
+
+
+
+----- change to 
+
+function Person(name,age)
+{
+    this.name=name;
+    this.age=age   
+}
+
+//this will be instance owned , only one method but all instance can access
+ Person.prototype.getDetails = function(){
+        return this.name+","+this.age;
+    }
+// this will be static method
+Person.compare=function(p1,p2){
+    if(p1.age>p2.age)
+    {
+        return p1;
+    }
+    return p2
+}
+
+
+var p1 = new Person("Flemin",32);
+var p2 = new Person("Flemin1",32);
+p1.getDetails(); 
+p2.getDetails();
+
+==================
+JSON - Java Script Object Notation
+
+var person ={
+    id:10
+    name:"Flemin"
+    getDetails:function(){
+        return this.id+","+this.name;
+    }
+}
+var product ={
+    id:11
+    name:"iPhone"
+    }
+
+var f = person.getDetails;
+f();//returns undefined because there is no context
+
+var f = person.getDetails.bind(person);
+f();// return 10,Flemin
+
+var f = person.getDetails.bind(product);
+f();// return 11,iPhone
+
+"bind" will bind the context of object
+
+var f = person.getDetails;
+f.call(person);// return 10,Flemin //CAll bind at run time
+f.call(product);// return 11,iPhone
+
+===============================================================
+Functional style of programming
+
+OOP                                                     Functional style
+-----                                                   -------------------
+method tightly coupled to state   of object             fucntions not coupled to state of object
+mutate the state                                        doesnot mutate the state, instead give a copy
+                                                        uses High order function: function accepting fucntions & function return function
+
+
+References
+
+https://rxmarbles.com/
