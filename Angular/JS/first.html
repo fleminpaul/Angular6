@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="lib.js"></script>
+    <script>
+        var data = [2, 4, 5, 12]
+        forEach(data, console.log);
+        //forEach(data, alert);
+
+        var products = [
+            { "id": 1, "name": "iPhone", "price": 124447.44, "category": "mobile" },
+            { "id": 2, "name": "Onida", "price": 4444.44, "category": "tv" },
+            { "id": 3, "name": "OnePlus 6", "price": 98444.44, "category": "mobile" },
+            { "id": 4, "name": "HDMI connector", "price": 2444.00, "category": "computer" },
+            { "id": 5, "name": "Samsung", "price": 68000.00, "category": "tv" }];
+
+            var result=filter(data,function(d){
+                return d%2===0;
+            })
+            forEach(result,console.log);
+
+            var result=filter(products,function(d){
+                return d.category==="mobile";
+            })
+            forEach(result,console.log);
+
+            result =map(data,function(d){
+                return d*2;
+            })
+            forEach(result,console.log)
+
+            result =map(products,function(d){
+                return d.name;
+            })
+            forEach(result,console.log)
+
+    </script>
+</body>
+
+</html>

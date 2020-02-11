@@ -157,9 +157,85 @@ OOP                                                     Functional style
 -----                                                   -------------------
 method tightly coupled to state   of object             fucntions not coupled to state of object
 mutate the state                                        doesnot mutate the state, instead give a copy
-                                                        uses High order function: function accepting fucntions & function return function
+                                                        uses High order function: 
+                                                            function accepting fucntions 
+                                                            function return function
 
 
 References
 
 https://rxmarbles.com/
+
+========================================================
+ES6 ==> ECMAScript 2015 ==>ES 2015
+ES7 ==> ESNext
+
+Most of the enigne yet to support this version, so we use transpilers to convert ES6/7 to lower version
+Babel,Traucer are popular transpilers
+
+ES 6 features
+let and const as scope members
+Arrow operators =>
+    eg: let add=(x,y)=>{
+            return x+y; }
+
+new string literal ``
+var name = "Flemin"
+var msg=`Hi
+        This is ${name}`
+
+Deconstructing 
+-------
+a) var colors=['red','green','blue','orange','white']
+old way :   let r = colors[0]
+            let g = colors[1]
+new way :   let [r,g,b...others]=colors;
+        console.log(r)//red
+
+
+b)Objec
+p= { "id": 1, "name": "iPhone", "price": 124447.44, "category": "mobile" }
+
+old: p.name or p["name"]
+new: {name,price}=p
+     console.log(name)
+
+     or
+
+     function someMethod({name,price}){
+         console.log(`${name},${price}`);
+     }
+    someMethod(p)
+
+Copying object
+old method
+let newp= Object.assign({},p)
+let p1={...p}
+=========================================================================
+Promise API
+
+- for asyncronus methods
+    resolve,reject,error
+
+========================================
+Node JS
+    provides JS environment with V8 enigne
+
+use of nodejs
+    a- to write server side JS code
+        build traditional web applications like: ASP.Net,Servelet and JavaScript 
+        it gives VIew templates like PUG,EJS,JADE similar to ASP or JavaScript
+    b- Build REST APIs
+    c- dev environment for REACT,Angular, Vue etc.
+        Transpile/compile
+        Minify: remove all blank space
+        Uglify: Smaller names to fucntions and variables
+        Lint
+        run test
+=========================================
+TypeScript typed JS
+let a:string="Flemin"
+let b:number = 10
+==================================
+webpack for task running
+createapp.dev
