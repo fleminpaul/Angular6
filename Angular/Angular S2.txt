@@ -1,0 +1,54 @@
+TypeScript: TypeScript compiler to conver ts to js
+Webpack :
+            for task like minifying, uglifying, linting es6 -> es5
+
+usage of default in export no need to put {} while importing
+e.g. export default Student{}
+     import Student from './Sutdent'
+
+Decorators [like annotations]
+-------------
+=============================================================================================================
+                                    ANGULAR 9
+=============================================================================================================
+RWD - Responisve Web Development
+    Foundation
+    Zerb
+    BootStrap - will be using this in our Application , by Twitter
+SPA - Single Page Application
+    Old Development : SSR - Server Side Rendering:= ASP,JSP,PUG,JADE
+    Current One
+                    : CSR - Client Side rendering only API calls will be done and returns a JSON
+
+    will have one single page
+    many templates
+CHALLANGES
+    - SEO
+    - Browser history   :  Routing
+    - Security  : Guards to protect URI access
+                : XSS=> sanitize before rendering
+    - Dependency Injection
+
+to resolve above we have following framwork
+ - ANGULAR - complete framework by GOOGLE
+ - BACKBONE - complete framework
+ - REACT (library) - by FB
+ - VUE  (library)
+
+building blocks of ANGULAR
+    -   Module
+    -   Component
+            Selector
+            templateURL
+            StyleURL
+            ----
+            Staet of the Component
+    -   Templates
+    -   Services
+            Business Logics
+            API calls
+    -   Router
+            URL paths
+    -   Guards
+    -   pipe
+    -   directives
